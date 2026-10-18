@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-cairo), system-ui, sans-serif;
+
+  --color-wood-950: #140d08;
+  --color-wood-900: #1f140c;
+  --color-wood-800: #2e1e12;
+  --color-wood-700: #4a2f1b;
+  --color-gold-300: #f6d98b;
+  --color-gold-400: #eec15b;
+  --color-gold-500: #d9a23a;
+  --color-gold-600: #b07d24;
+  --color-ink-950: #070b14;
+  --color-ink-900: #0d1424;
+  --color-ink-800: #16213a;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-ink-950);
+  color: #f5efe6;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(238 193 91 / 0.35);
+  color: #fff;
+}
+
+/* Frosted glass card */
+@utility glass {
+  background: linear-gradient(145deg, rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.02));
+  border: 1px solid rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow:
+    0 1px 0 0 rgb(255 255 255 / 0.06) inset,
+    0 20px 50px -20px rgb(0 0 0 / 0.6);
+}
+
+@utility text-gradient-heritage {
+  background: linear-gradient(90deg, #f6d98b, #eec15b 40%, #d9a23a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-split {
+  background: linear-gradient(270deg, #f6d98b 0%, #eec15b 35%, #67e8f9 75%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
