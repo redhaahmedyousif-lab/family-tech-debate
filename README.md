@@ -3,6 +3,8 @@
 منصّة تفاعليّة لمشروع مادة اللغة العربية والأدب (IB MYP) تناقش سؤال:
 **«هل تُهدّد التكنولوجيا التّواصُلَ الأُسَرِيَّ الحَقِيقِيَّ؟»**
 
+🌐 **الموقع:** https://redhaahmedyousif-lab.github.io/family-tech-debate/
+
 Built with Next.js (App Router), Tailwind CSS v4, Framer Motion and Lucide icons. RTL layout with the Cairo font.
 
 ## Sections

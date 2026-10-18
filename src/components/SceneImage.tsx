@@ -29,7 +29,7 @@ export default function SceneImage({ src, alt, variant, className = "" }: Props)
     // eslint-disable-next-line @next/next/no-img-element -- plain <img> so a missing file can fall back gracefully
     <img
       ref={imgRef}
-      src={src}
+      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${src}`}
       alt={alt}
       loading="lazy"
       onError={() => setFailed(true)}
