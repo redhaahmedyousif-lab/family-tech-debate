@@ -1,5 +1,3 @@
-export const REPO_URL = "https://github.com/redhaahmedyousif-lab/family-tech-debate";
-
 export type TeamId = "team1" | "team2";
 
 export type Argument = {

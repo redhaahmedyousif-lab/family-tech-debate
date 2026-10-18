@@ -1,6 +1,6 @@
 # التكنولوجيا والتواصل الأسري — Technology & Family Communication
 
-منصّة تفاعليّة لمشروع مادة اللغة العربية والأدب (IB MYP) تناقش سؤال:
+منصّة تفاعليّة في مادة اللغة العربية والأدب (IB MYP) تناقش سؤال:
 **«هل تُهدّد التكنولوجيا التّواصُلَ الأُسَرِيَّ الحَقِيقِيَّ؟»**
 
 🌐 **الموقع:** https://redhaahmedyousif-lab.github.io/family-tech-debate/
@@ -32,4 +32,4 @@ npm run build    # production build
 Content (arguments, captions, labels) lives in `src/data/content.ts`.
 
 ---
-تم التطوير بواسطة RJ Works | مشروع مادة اللغة العربية والأدب
+تصميم وتطوير: رضا أحمد يوسف — ساعة صفاء | مادة اللغة العربية والأدب

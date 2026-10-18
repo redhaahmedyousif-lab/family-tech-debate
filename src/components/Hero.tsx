@@ -60,7 +60,7 @@ export default function Hero() {
           className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold text-stone-200 sm:text-sm"
         >
           <span className="size-2 animate-pulse rounded-full bg-gold-400" />
-          مشروع اللغة العربية والأدب · IB MYP
+          مادة اللغة العربية والأدب · IB MYP
         </motion.span>
 
         <motion.h1
