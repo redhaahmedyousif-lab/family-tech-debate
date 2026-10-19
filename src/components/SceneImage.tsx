@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import SceneIllustration from "./SceneIllustration";
+import { useEffect, useState } from "react";
+import TraditionalFamilySVG from "./TraditionalFamilySVG";
+import DigitalFamilySVG from "./DigitalFamilySVG";
 
 type Props = {
   src: string;
@@ -10,30 +11,28 @@ type Props = {
   className?: string;
 };
 
-/** Renders the photo from public/images, falling back to an SVG illustration if it is missing. */
+/**
+ * Shows the hand-drawn SVG scene by default. If a photo exists at `src`
+ * (public/images/...), it is swapped in once it has loaded successfully.
+ */
 export default function SceneImage({ src, alt, variant, className = "" }: Props) {
-  const [failed, setFailed] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const [photo, setPhoto] = useState<string | null>(null);
 
-  // The image may have errored before hydration attached onError.
   useEffect(() => {
-    const img = imgRef.current;
-    if (img && img.complete && img.naturalWidth === 0) setFailed(true);
-  }, []);
+    const url = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${src}`;
+    const img = new Image();
+    img.onload = () => setPhoto(url);
+    img.src = url;
+    return () => {
+      img.onload = null;
+    };
+  }, [src]);
 
-  if (failed) {
-    return <SceneIllustration variant={variant} className={`h-full w-full object-cover ${className}`} />;
+  if (photo) {
+    // eslint-disable-next-line @next/next/no-img-element -- static export; photo is optional
+    return <img src={photo} alt={alt} className={`h-full w-full object-cover ${className}`} />;
   }
 
-  return (
-    // eslint-disable-next-line @next/next/no-img-element -- plain <img> so a missing file can fall back gracefully
-    <img
-      ref={imgRef}
-      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${src}`}
-      alt={alt}
-      loading="lazy"
-      onError={() => setFailed(true)}
-      className={`h-full w-full object-cover ${className}`}
-    />
-  );
+  const Illustration = variant === "traditional" ? TraditionalFamilySVG : DigitalFamilySVG;
+  return <Illustration className={`h-full w-full ${className}`} />;
 }

@@ -6,6 +6,7 @@ import Debate from "@/components/Debate";
 import MindMap from "@/components/MindMap";
 import Poll from "@/components/Poll";
 import Footer from "@/components/Footer";
+import NoticeModal from "@/components/NoticeModal";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Poll />
       </main>
       <Footer />
+      <NoticeModal />
     </>
   );
 }
