@@ -87,13 +87,17 @@ function SceneCard({ scene, index }: { scene: Scene; index: number }) {
       </div>
 
       <div className="relative p-6 sm:p-7">
-        <p className={`text-sm font-semibold ${scene.tone === "heritage" ? "text-gold-400" : "text-cyan-300"}`}>
-          {scene.tagline}
-        </p>
-        <h3 className="mt-1 text-2xl font-extrabold sm:text-3xl">
+        <h3 className="text-2xl font-extrabold leading-snug sm:text-3xl">
           {scene.label}: <span className={scene.tone === "heritage" ? "text-gradient-heritage" : "text-cyan-200"}>{scene.title}</span>
         </h3>
-        <p className="mt-3 leading-loose text-stone-300">{scene.description}</p>
+        <p className={`mt-2 font-semibold leading-relaxed ${scene.tone === "heritage" ? "text-gold-400" : "text-cyan-300"}`}>
+          {scene.tagline}
+        </p>
+        <p className="mt-4 leading-loose text-stone-300">{scene.description}</p>
+        <div className={`mt-5 rounded-2xl border-s-4 p-4 ${scene.tone === "heritage" ? "border-gold-400/70 bg-gold-400/5" : "border-cyan-400/70 bg-cyan-400/5"}`}>
+          <p className={`text-sm font-bold ${scene.tone === "heritage" ? "text-gold-300" : "text-cyan-200"}`}>{scene.analysisLabel}</p>
+          <p className="mt-1 leading-loose text-stone-200">{scene.analysis}</p>
+        </div>
       </div>
     </motion.article>
   );

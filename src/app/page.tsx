@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Gallery from "@/components/Gallery";
+import ModerationBanner from "@/components/ModerationBanner";
 import Debate from "@/components/Debate";
 import MindMap from "@/components/MindMap";
 import Poll from "@/components/Poll";
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <Gallery />
+        <ModerationBanner />
         <Debate />
         <MindMap />
         <Poll />

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { BrainCircuit, ChevronsDownUp, ChevronsUpDown, HelpCircle, Minus, Plus, Scale } from "lucide-react";
-import { teams, type TeamId } from "@/data/content";
+import { moderation, teams, type TeamId } from "@/data/content";
 import SectionHeading from "./SectionHeading";
 
 const branchTheme = {
@@ -177,8 +177,7 @@ export default function MindMap() {
             <div>
               <p className="text-sm font-semibold text-gold-400">نقطة الالتقاء</p>
               <p className="mt-1 leading-loose text-stone-200">
-                يتّفق الفريقان ضمنًا على أنّ <strong className="text-gold-300">الاعتدال وتنظيم الوقت</strong> هما الحَكَم؛
-                فالتقنية بلا ضابطٍ تبني الجدران، وبحسن التدبير تمدّ الجسور.
+                {moderation.quote}
               </p>
             </div>
           </div>

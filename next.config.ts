@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   basePath,
   trailingSlash: true,
   images: { unoptimized: true },
+  devIndicators: false,
 };
 
 export default nextConfig;
